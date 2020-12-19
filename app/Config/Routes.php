@@ -60,6 +60,8 @@ $routes->group('reseller', ['namespace' => 'App\Modules\Reseller\Controllers'], 
 $routes->group('transaksi', ['namespace' => 'App\Modules\Transaksi\Controllers'], function ($routes) {
 	$routes->get('out', 'Transaksi::keluar', ['as' => 'transaksi-out']);
 	$routes->get('in', 'Transaksi::masuk', ['as' => 'transaksi-in']);
+	$routes->get('reseller', 'Transaksi::masuk_reseller', ['as' => 'transaksi-in-reseller']);
+	
 });
 
 

@@ -8,7 +8,7 @@
 	<link rel="icon" href="<?= base_url('assets/img/icon.ico'); ?>" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
-	<script src="<?= base_"assets/js/plugin/webfont/webfont.min.js'); "url(?>"></script>
+	<script src="<?= base_url("assets/js/plugin/webfont/webfont.min.js");?>"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -86,9 +86,7 @@
 	<!-- Atlantis JS -->
 	<script src="<?= base_url("assets/js/atlantis.min.js") ?>"></script>
 
-	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="<?= base_url("assets/js/setting-demo.js") ?>"></script>
-	<script src="<?= base_url("assets/js/demo.js") ?>"></script>
+	<script src="<?= base_url("assets/js/custom.js") ?>"></script>
 	<script>
 		$(function() {
 			$('[data-toggle="tooltip"]').tooltip()

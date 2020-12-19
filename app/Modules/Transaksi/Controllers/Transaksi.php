@@ -23,6 +23,15 @@ class Transaksi extends BaseController
             'user' => 'Tri',
             'page_title' => 'Transaksi Keluar',
         ];
-        return view($this->path . '/list', $data);
+        return view($this->path . '/transaksi_keluar', $data);
+    }
+
+    public function masuk_reseller()
+    {
+        $data = [
+            'user' => 'Tri',
+            'page_title' => 'Transaksi Masuk Reseller',
+        ];
+        return view($this->path . '/transaksi_masuk_reseller', $data);
     }
 }

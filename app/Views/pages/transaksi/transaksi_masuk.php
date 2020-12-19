@@ -29,7 +29,7 @@
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <div class="card-head-row">
+                        <div class="card-head-row" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <div class="card-title">
                                 Form Transaksi Masuk
                             </div>

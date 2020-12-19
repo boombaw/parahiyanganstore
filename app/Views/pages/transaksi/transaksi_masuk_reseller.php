@@ -20,7 +20,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Transaksi Keluar</a>
+                <a href="#">Transaksi Masuk Reseller</a>
             </li>
         </ul>
     </div>
@@ -29,9 +29,9 @@
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <div class="card-head-row">
+                        <div class="card-head-row" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <div class="card-title">
-                                Form Transaksi Keluar
+                                Form Transaksi Masuk Reseller
                             </div>
                             <div class="card-tools">
                                 <button class="btn btn-sm btn-round mr-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -47,21 +47,8 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-4">
                                         <div class="form-group">
-                                            <label for="no_resi">No. Resi</label>
-                                            <input type="text" name="no_resi" class="form-control">
-                                        </div>
-                                        <div class="form-group">
                                             <label for="tgl_transaksi">Tanggal Transaksi</label>
                                             <input type="date" name="tgl_transaksi" id="" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="input-icon">
-                                                <label for="reseller_name">Nama Reseller</label>
-                                                <input type="text" class="form-control pl-3" name="reseller_name" id="reseller_name" placeholder="Cari Reseller...">
-                                                <span class="input-icon-addon mt-3">
-                                                    <i class="fa fa-search"></i>
-                                                </span>
-                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-icon">
@@ -73,33 +60,35 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label for="warna">Warna</label>
+                                            <select name="warna" id="warna" class="form-control">
+                                                <option selected disabled>-- Pilih Warna --</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="size">Size</label>
+                                            <select name="size" id="size" class="form-control">
+                                                <option selected disabled>-- Pilih Size --</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="qty">Qty</label>
                                             <input type="number" name="qty" class="form-control" min="1">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4">
                                         <div class="form-group">
-                                            <label for="saldo_masuk">Saldo Masuk</label>
-                                            <input type="number" name="saldo_masuk" class="form-control">
+                                            <label for="customer_name">Nama Pembeli</label>
+                                            <input type="text" class="form-control pl-3" name="customer_name" id="customer_name" placeholder="Masukkan Nama Pembeli">
                                         </div>
                                         <div class="form-group">
-                                            <label for="garansi">Garansi</label>
-                                            <input type="number" name="garansi" class="form-control">
+                                            <label for="nohp_pembeli">No. HP Pembeli</label>
+                                            <input type="text" name="nohp_pembeli" class="form-control" placeholder="Masukkan No. HP Pembeli">
                                         </div>
                                         <div class="form-group">
-                                            <label for="nama_penerima">Nama Penerima</label>
-                                            <input type="text" name="nama_penerima" class="form-control" placeholder="Masukkan Nama Penerima">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="nohp_penerima">No. HP Penerima</label>
-                                            <input type="text" name="nohp_penerima" class="form-control" placeholder="Masukkan No. HP Penerima">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="alamat_penerima">Alamat Penerima</label>
+                                            <label for="alamat_penerima">Alamat Pembeli</label>
                                             <textarea name="alamat_penerima" cols="30" rows="2" class="form-control"></textarea>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 col-lg-4">
                                         <div class="form-group">
                                             <label for="pembayaran">Pembayaran Pembeli</label>
                                             <input type="text" name="pembayaran" class="form-control">
@@ -121,7 +110,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Transaksi Keluar</h4>
+                    <h4 class="card-title">Data Transaksi</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -130,9 +119,9 @@
                                 <tr>
                                     <th>Tanggal Transaksi</th>
                                     <th>Produk</th>
-                                    <th>Reseller</th>
-                                    <th>Total Order</th>
-                                    <th>No Resi</th>
+                                    <th>Qty</th>
+                                    <th>Pembeli</th>
+                                    <th>Alamat</th>
                                     <th>Pembayaran</th>
                                     <th>Aksi</th>
                                 </tr>

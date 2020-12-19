@@ -64,6 +64,11 @@
                                     <span class="sub-item">Transaksi Keluar</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="<?= route_to('transaksi-in-reseller')?>">
+                                    <span class="sub-item">Transaksi Reseller</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
