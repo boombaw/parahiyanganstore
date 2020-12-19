@@ -1,0 +1,2 @@
+run:
+	@php spark serve
