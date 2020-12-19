@@ -22,8 +22,7 @@ class App extends BaseConfig
 	|
 	*/
 	
-	public $baseURL = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
-	// public $baseURL = 'http://localhost:8080/';
+	public $baseURL = BASE_URL;
 
 	/*
 	|--------------------------------------------------------------------------
