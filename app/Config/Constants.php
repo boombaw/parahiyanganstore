@@ -80,7 +80,7 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 -----------------------
 |   ADD BASE URL 
 -----------------------
-|   For dynamic url
+|   For dynamic url codeigniter
 */
 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' . $_SERVER['HTTP_HOST'] : 'http://' . $_SERVER['HTTP_HOST'];
 defined('BASE_URL') || define('BASE_URL', $protocol);
