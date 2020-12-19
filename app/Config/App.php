@@ -22,7 +22,7 @@ class App extends BaseConfig
 	|
 	*/
 	
-	public $baseURL = BASE_URL;
+	public $baseURL = "https://parahiyanganstore.herokuapp.com";
 
 	/*
 	|--------------------------------------------------------------------------
