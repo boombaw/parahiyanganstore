@@ -9,9 +9,9 @@ class Home extends BaseController
 
     public function index()
     {
-
+        
         $data = [
-            'user' => 'Tri',
+            'user' => session('username'),
             'page_title' => 'Home',
         ];
         return view('pages/home/index', $data);

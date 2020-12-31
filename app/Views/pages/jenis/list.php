@@ -52,27 +52,33 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form class="form-jenis">
+                                        <?= csrf_field() ?>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <div class="form-group form-group-default">
+                                                <div class="form-group">
                                                     <label>Nama Kategori</label>
-                                                    <select name="kategori" class="form-control">
+                                                    <select name="kategori" class="form-control text-capitalize" required>
                                                         <option selected disabled>-- Pilih Kategori --</option>
+                                                        <?php foreach ($kategori->getResultObject() as $key => $item) : ?>
+                                                            <option value="<?= $item->id ?>"><?= $item->name ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
-                                                <div class="form-group form-group-default">
+                                                <div class="form-group">
                                                     <label>Nama Jenis</label>
-                                                    <input id="addName" type="text" class="form-control" placeholder="Masukkan Nama Jenis">
+                                                    <input id="addName" name="jenis_name" type="text" class="form-control" placeholder="Masukkan Nama Jenis" required autofocus autocomplete="off">
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="button" id="addRowButton" class="btn btn-primary">Tambah</button>
+                                    <button type="button" id="addJenis" class="btn btn-primary">Tambah</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                                 </div>
                             </div>
@@ -80,35 +86,21 @@
                     </div>
 
                     <!-- Modal Edit -->
-                    <div class="modal fade" id="EditRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal fade" id="EditJenisModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content" id="content-modal-edit"></div>
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="add-row" class="display table table-striped table-hover">
+                        <table id="add-jenis" class="display table table-striped table-hover text-capitalize">
                             <thead>
                                 <tr>
+                                    <th>Nama Kategori</th>
                                     <th>Nama Jenis</th>
                                     <th style="width: 10%">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>System Architect</td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-jenis" data-original-title="Edit Jenis">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            &nbsp;&nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-danger btn-round delete-jenis" data-original-title="Hapus Jenis">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>

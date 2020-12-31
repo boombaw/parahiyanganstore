@@ -24,21 +24,6 @@
                     <div class="collapse" id="base">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="<?= route_to('kategori')?>">
-                                    <span class="sub-item">Kategori</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= route_to('jenis')?>">
-                                    <span class="sub-item">Jenis</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= route_to('produk')?>">
-                                    <span class="sub-item">Produk</span>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="<?= route_to('reseller')?>">
                                     <span class="sub-item">Reseller</span>
                                 </a>
@@ -55,18 +40,8 @@
                     <div class="collapse" id="sidebarLayouts">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="<?= route_to('transaksi-in')?>">
-                                    <span class="sub-item">Transaksi Masuk</span>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="<?= route_to('transaksi-out')?>">
                                     <span class="sub-item">Transaksi Keluar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= route_to('transaksi-in-reseller')?>">
-                                    <span class="sub-item">Transaksi Reseller</span>
                                 </a>
                             </li>
                         </ul>
@@ -81,17 +56,7 @@
                     <div class="collapse" id="forms">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="<?= route_to('report-sales')?>">
-                                    <span class="sub-item">Laporan Penjualan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= route_to('report-stock')?>">
-                                    <span class="sub-item">Laporan Stock</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= route_to('report-rekap-sales')?>"> <span class="sub-item">Laporan Rekap Penjualan</span> </a>
+                                <a href="<?= route_to('laporan-rekap')?>"> <span class="sub-item">Laporan Rekap Penjualan</span> </a>
                             </li>
                         </ul>
                     </div>

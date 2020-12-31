@@ -52,25 +52,27 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form class="form-reseller">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <div class="form-group form-group-primary">
+                                                <div class="form-group">
                                                     <label>Nama Reseller</label>
-                                                    <input id="addName" type="text" class="form-control" placeholder="Masukkan Nama Reseller">
+                                                    <input id="addName" name="reseller" type="text" class="form-control" placeholder="Masukkan Nama Reseller" required>
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
-                                                <div class="form-group form-group-primary">
+                                                <div class="form-group">
                                                     <label for="join_date">Tanggal Join</label>
-                                                    <input type="date" name="join_date" id="join_date" class="form-control form-control">
+                                                    <input type="date" name="join_date" id="join_date" class="form-control form-control" required>
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="button" id="addRowButton" class="btn btn-primary">Tambah</button>
+                                    <button type="button" id="addReseller" class="btn btn-primary">Tambah</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                                 </div>
                             </div>
@@ -78,13 +80,13 @@
                     </div>
 
                     <!-- Modal Edit -->
-                    <div class="modal fade" id="EditRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal fade" id="EditResellerModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content" id="content-modal-edit"></div>
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="add-row" class="display table table-striped table-hover">
+                        <table id="add-reseller" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Nama Reseller</th>
@@ -92,23 +94,7 @@
                                     <th style="width: 10%">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>System Architect</td>
-                                    <td><?= date('Y-m-d'); ?></td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-reseller" data-original-title="Edit Reseller">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            &nbsp;&nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-danger btn-round delete-reseller" data-original-title="Hapus Reseller">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>

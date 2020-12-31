@@ -52,19 +52,21 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form class="form-kategori">
+                                        <?= csrf_field() ?>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <div class="form-group form-group-default">
-                                                    <label>Nama Kategori</label>
-                                                    <input id="addName" type="text" class="form-control" placeholder="Masukkan Nama Kategori">
+                                                <div class="form-group form-group-primary">
+                                                    <label for="kategori_name">Nama Kategori</label>
+                                                    <input id="addName" name="kategori_name" type="text" class="form-control" placeholder="Masukkan Nama Kategori" autocomplete="off" autofocus required>
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="button" id="addRowButton" class="btn btn-primary">Tambah</button>
+                                    <button type="submit" id="addRowButton" class="btn btn-primary">Tambah</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                                 </div>
                             </div>
@@ -78,29 +80,14 @@
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="add-row" class="display table table-striped table-hover">
+                        <table id="add-kategori" class="display table table-striped table-hover text-capitalize">
                             <thead>
                                 <tr>
                                     <th>Nama Kategori</th>
                                     <th style="width: 10%">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>System Architect</td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-kategori" data-original-title="Edit Kategori">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            &nbsp;&nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-danger btn-round delete-kategori" data-original-title="Hapus Kategori">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>

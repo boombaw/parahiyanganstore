@@ -41,74 +41,91 @@
                         </div>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            <form action="">
+                            <form class="form-transout">
+                                <input type="hidden" name="id">
                                 <div class="row">
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="no_resi">No. Resi</label>
                                             <input type="text" name="no_resi" class="form-control">
+                                            <div class="invalid-feedback"></div>
+
                                         </div>
                                         <div class="form-group">
-                                            <label for="tgl_transaksi">Tanggal Transaksi</label>
+                                            <label for="tgl_transaksi">Tanggal Transaksi&nbsp;<span class="text-danger">*</span></label>
                                             <input type="date" name="tgl_transaksi" id="" class="form-control">
+                                            <div class="invalid-feedback"></div>
+
                                         </div>
                                         <div class="form-group">
-                                            <div class="input-icon">
-                                                <label for="reseller_name">Nama Reseller</label>
-                                                <input type="text" class="form-control pl-3" name="reseller_name" id="reseller_name" placeholder="Cari Reseller...">
-                                                <span class="input-icon-addon mt-3">
-                                                    <i class="fa fa-search"></i>
-                                                </span>
-                                            </div>
+                                            <label for="reseller">Nama Reseller&nbsp;<span class="text-danger">*</span></label>
+                                            <select class="form-control select2" name="reseller" id="reseller" data-allow-clear="true" data-placeholder="Cari Reseller...">
+                                                <option value="" selected="selected"></option>
+                                                <?php foreach ($reseller as $item) : ?>
+                                                    <option value="<?= $item->id ?>"><?= ucwords($item->name) ?></option>
+                                                <?php endforeach ?>
+                                            </select>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="input-icon">
-                                                <label for="produk">Produk</label>
-                                                <input type="text" class="form-control pl-3" name="produk" placeholder="Cari produk...">
-                                                <span class="input-icon-addon mt-3">
-                                                    <i class="fa fa-search"></i>
-                                                </span>
-                                            </div>
+                                            <label for="produk">Produk&nbsp;<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control pl-3" name="produk" placeholder="Masukkan Nama Produk">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="qty">Qty</label>
+                                            <label for="warna">Warna</label>
+                                            <input type="text" name="warna" class="form-control" placeholder="Masukkan Warna">
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="size">Size</label>
+                                            <input type="text" name="size" class="form-control" placeholder="Masukkan Size">
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="qty">Qty&nbsp;<span class="text-danger">*</span></label>
                                             <input type="number" name="qty" class="form-control" min="1">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
-                                            <label for="saldo_masuk">Saldo Masuk</label>
+                                            <label for="pembayaran_pembeli">Pembayaran Pembeli&nbsp;<span class="text-danger">*</span></label>
+                                            <input type="text" name="pembayaran_pembeli" class="form-control">
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="saldo_masuk">Saldo Masuk&nbsp;<span class="text-danger">*</span></label>
                                             <input type="number" name="saldo_masuk" class="form-control">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="garansi">Garansi</label>
+                                            <label for="modal">Modal&nbsp;<span class="text-danger">*</span></label>
+                                            <input type="number" name="modal" class="form-control">
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="garansi">Garansi&nbsp;<span class="text-danger">*</span></label>
                                             <input type="number" name="garansi" class="form-control">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="nama_penerima">Nama Penerima</label>
+                                            <label for="nama_penerima">Nama Penerima&nbsp;<span class="text-danger">*</span></label>
                                             <input type="text" name="nama_penerima" class="form-control" placeholder="Masukkan Nama Penerima">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="nohp_penerima">No. HP Penerima</label>
-                                            <input type="text" name="nohp_penerima" class="form-control" placeholder="Masukkan No. HP Penerima">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="alamat_penerima">Alamat Penerima</label>
-                                            <textarea name="alamat_penerima" cols="30" rows="2" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-lg-4">
-                                        <div class="form-group">
-                                            <label for="pembayaran">Pembayaran Pembeli</label>
-                                            <input type="text" name="pembayaran" class="form-control">
+                                            <label for="alamat_penerima">Alamat Penerima&nbsp;<span class="text-danger">*</span></label>
+                                            <textarea name="alamat_penerima" id="alamat_penerima" cols=" 30" rows="2" class="form-control"></textarea>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-action pl-3">
-                                    <button class="btn btn-success">Submit</button>
-                                    <button class="btn btn-danger">Cancel</button>
+                                    <button class="btn btn-success" id="addTransOut">Submit</button>
+                                    <button class="btn btn-danger" type="reset">Cancel</button>
                                 </div>
                             </form>
                         </div>
@@ -125,40 +142,22 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="datatables-1" class="display table table-striped table-hover">
+                        <table id="tbl-transout" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th>No Resi</th>
                                     <th>Tanggal Transaksi</th>
                                     <th>Produk</th>
                                     <th>Reseller</th>
                                     <th>Total Order</th>
-                                    <th>No Resi</th>
                                     <th>Pembayaran</th>
+                                    <th>Saldo Masuk</th>
+                                    <th>Garansi</th>
+                                    <th>Komisi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2011/04/25</td>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>61</td>
-                                    <td>Edinburgh2712379JS</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        <div class="row flex-nowrap">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-transout" data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            &nbsp;
-                                            &nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-danger btn-round delete-transout d-inline" data-original-title="Remove">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>

@@ -22,7 +22,7 @@ class App extends BaseConfig
 	|
 	*/
 	
-	public $baseURL = "https://parahiyanganstore.herokuapp.com";
+	public $baseURL = 'http://localhost:8080';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -100,7 +100,7 @@ class App extends BaseConfig
 	| dates with the date helper, and can be retrieved through app_timezone()
 	|
 	*/
-	public $appTimezone = 'America/Chicago';
+	public $appTimezone = 'Asia/Jakarta';
 
 	/*
 	|--------------------------------------------------------------------------

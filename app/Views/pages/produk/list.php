@@ -52,43 +52,32 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form class="form-produk">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group form-group-primary">
                                                     <label>Nama Produk</label>
-                                                    <input id="addName" type="text" class="form-control" placeholder="Masukkan Nama Produk">
+                                                    <input id="addName" name="produk" type="text" class="form-control" placeholder="Masukkan Nama Produk" autocomplete="off">
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
-                                                <div class="form-group form-group-primary">
+                                                <div class="form-group">
                                                     <label for="jenis_produk">Jenis Produk</label>
-                                                    <select name="jenis_produk" id="jenis_produk" class="form-control form-control">
+                                                    <select name="jenis_produk" id="jenis_produk" class="form-control form-control ">
                                                         <option selected disabled>-- Pilih Jenis Produk --</option>
-                                                        <option value="">asdasd</option>
-                                                        <option value="">asdasd</option>
-                                                        <option value="">asdasd</option>
-                                                        <option value="">asdasd</option>
+                                                        <?php foreach ($jenis as $item) : ?>
+                                                            <option value="<?= $item->id ?>"><?= $item->name ?></option>
+                                                        <?php endforeach ?>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group form-group-primary">
-                                                    <label>Warna Produk</label>
-                                                    <input name="warna_produk" id="warna_produk" type="text" class="form-control" placeholder="Masukkan Warna Produk">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group form-group-primary">
-                                                    <label>Size Produk</label>
-                                                    <input name="size_produk" id="size_produk" type="number" class="form-control" placeholder="Masukkan Size Produk">
+                                                    <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="button" id="addRowButton" class="btn btn-primary bg-default-gradient">Tambah</button>
+                                    <button type="button" id="addProduk" class="btn btn-primary bg-default-gradient">Tambah</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                                 </div>
                             </div>
@@ -96,39 +85,21 @@
                     </div>
 
                     <!-- Modal Edit -->
-                    <div class="modal fade" id="EditRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal fade" id="EditProdukModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content" id="content-modal-edit"></div>
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="add-row" class="display table table-striped table-hover">
+                        <table id="add-produk" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th>Jenis Produk</th>
                                     <th>Nama Produk</th>
                                     <th style="width: 10%">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>System Architect</td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-produk" data-original-title="Detail Produk">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            &nbsp;&nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-produk" data-original-title="Ubah Produk">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            &nbsp;&nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-danger btn-round delete-produk" data-original-title="Hapus Produk">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>

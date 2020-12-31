@@ -41,48 +41,68 @@
                         </div>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            <form action="">
+                            <form class="form-transaksi-masuk">
                                 <div class="row">
                                     <div class="col-md-4 col-lg-4">
                                         <div class="form-group">
-                                            <label for="no_po">No. PO</label>
-                                            <input type="text" name="no_po" class="form-control">
+                                            <label for="no_po">No. PO <span class="text-danger">*</span></label>
+                                            <input type="text" name="no_po" class="form-control" required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="tgl_transaksi">Tanggal Transaksi</label>
-                                            <input type="date" name="tgl_transaksi" id="" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-lg-4">
-                                        <div class="form-group">
-                                            <div class="input-icon">
-                                                <label for="produk">Produk</label>
-                                                <input type="text" class="form-control pl-3" name="produk" placeholder="Cari produk...">
-                                                <span class="input-icon-addon mt-3">
-                                                    <i class="fa fa-search"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="qty">Qty</label>
-                                            <input type="number" name="qty" class="form-control" min="1">
+                                            <label for="tgl_transaksi">Tanggal Transaksi&nbsp;<span class="text-danger">*</span></label>
+                                            <input type="date" name="tgl_transaksi" id="" class="form-control" required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4">
                                         <div class="form-group">
-                                            <label for="pembayaran">Tipe Pembayaran</label>
-                                            <select name="pembayaran" id="" class="form-control">
-                                                <option selected disabled>-- Pilih Tipe Pembayaran --</option>
-                                                <option value="">Tunai</option>
-                                                <option value="">Non Tunai</option>
+                                            <label for="produk">Produk<span class="text-danger">*</span></label>
+                                            <select name="produk" id="produk" class="form-control select2" data-placeholder="Cari Produk ..." data-allow-clear="true" required>
+                                                <option selected="selected"></option>
+                                                <?php foreach ($produk as $item) : ?>
+                                                    <option value="<?= $item->id ?>"><?= $item->name ?></option>
+                                                <?php endforeach ?>
                                             </select>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="warna">Warna</label>
+                                            <input type="text" name="warna" class="form-control" placeholder="Masukkan Warna">
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="size">Size</label>
+                                            <input type="text" name="size" class="form-control" placeholder="Masukkan Size">
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="qty">Qty&nbsp;<span class="text-danger">*</span></label>
+                                            <input type="number" name="qty" class="form-control" min="1" required>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="pembayaran">Tipe Pembayaran&nbsp;<span class="text-danger">*</span></label>
+                                            <select name="pembayaran" id="pembayaran" class="form-control select2" data-placeholder="-- Pilih Metode Pembayaran --" data-allow-clear="true" required>
+                                                <option selected="selected"></option>
+                                                <option value="1">Tunai</option>
+                                                <option value="2">Non Tunai</option>
+                                            </select>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nominal">Nominal&nbsp;<span class="text-danger">*</span></label>
+                                            <input type="number" name="nominal" class="form-control" min="1" required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-action pl-3">
-                                    <button class="btn btn-success">Submit</button>
+                                    <button class="btn btn-success" id="addTransaksiMasuk">Submit</button>
                                     <button class="btn btn-danger">Cancel</button>
                                 </div>
                             </form>
@@ -100,7 +120,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="datatables-1" class="display table table-striped table-hover">
+                        <table id="tbl-transaksimasuk" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Tanggal Transaksi</th>
@@ -111,27 +131,7 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2011/04/25</td>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>61</td>
-                                    <td>Edinburgh2712379JS</td>
-                                    <td>
-                                        <div class="row flex-nowrap">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-primary btn-round edit-transout" data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            &nbsp;
-                                            &nbsp;
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-icon btn-danger btn-round delete-transout d-inline" data-original-title="Remove">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>

@@ -61,15 +61,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="warna">Warna</label>
-                                            <select name="warna" id="warna" class="form-control">
-                                                <option selected disabled>-- Pilih Warna --</option>
-                                            </select>
+                                            <input type="text" name="warna" class="form-control" placeholder="Masukkan Warna">
                                         </div>
                                         <div class="form-group">
                                             <label for="size">Size</label>
-                                            <select name="size" id="size" class="form-control">
-                                                <option selected disabled>-- Pilih Size --</option>
-                                            </select>
+                                            <input type="text" name="size" class="form-control" placeholder="Masukkan Size">
                                         </div>
                                         <div class="form-group">
                                             <label for="qty">Qty</label>

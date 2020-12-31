@@ -3,12 +3,12 @@
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title><?= $user ?> | <?= $page_title ?></title>
+	<title><?= @$user ?: '' ?> | <?= @$page_title ?: '' ?></title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="<?= base_url('assets/img/icon.ico'); ?>" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
-	<script src="<?= base_url("assets/js/plugin/webfont/webfont.min.js");?>"></script>
+	<script src="<?= base_url("assets/js/plugin/webfont/webfont.min.js"); ?>"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -16,7 +16,7 @@
 			},
 			custom: {
 				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-				urls: ['<?= base_url("assets/css/fonts.min.css")?>']
+				urls: ['<?= base_url("assets/css/fonts.min.css") ?>']
 			},
 			active: function() {
 				sessionStorage.fonts = true;
@@ -27,7 +27,11 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/atlantis.css'); ?>">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+	<link href="<?= base_url('assets/plugin/select2/css/select2.css') ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>">
+
+
 	<script>
 		var baseURL = "<?php echo base_url(); ?>"
 	</script>
@@ -49,13 +53,21 @@
 		</div>
 	</div>
 	<!--   Core JS Files   -->
-	<script src="<?= base_url("assets/js/core/jquery.3.2.1.min.js") ?>"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	
 	<script src="<?= base_url("assets/js/core/popper.min.js") ?>"></script>
 	<script src="<?= base_url("assets/js/core/bootstrap.min.js") ?>"></script>
+	<!-- Bootstrap Notify -->
+	<script src="<?= base_url("assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js") ?>"></script>
 
 	<!-- jQuery UI -->
-	<script src="<?= base_url("assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js") ?>"></script>
 	<script src="<?= base_url("assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js") ?>"></script>
+
+	<!-- Select2 -->
+	<!-- <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script> -->
+	<script src="<?= base_url('assets/plugin/select2/js/select2.full.js') ?>"></script>
 
 	<!-- jQuery Scrollbar -->
 	<script src="<?= base_url("assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js") ?>"></script>
@@ -73,8 +85,6 @@
 	<!-- Datatables -->
 	<script src="<?= base_url("assets/js/plugin/datatables/datatables.min.js") ?>"></script>
 
-	<!-- Bootstrap Notify -->
-	<script src="<?= base_url("assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js") ?>"></script>
 
 	<!-- jQuery Vector Maps -->
 	<script src="<?= base_url("assets/js/plugin/jqvmap/jquery.vmap.min.js") ?>"></script>
@@ -90,6 +100,7 @@
 	<script>
 		$(function() {
 			$('[data-toggle="tooltip"]').tooltip()
+			$('.select2').select2();
 		})
 	</script>
 </body>
